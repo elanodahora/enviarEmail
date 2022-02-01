@@ -1,0 +1,43 @@
+  para executar este codigo usei java, ide eclipse e servidor apache-tomcat-8.5.32 
+  
+  este exemlo de envio de e-mail via gmail com commons-mail
+  foi feito baseado em 
+  https://benignosales.wordpress.com/2010/11/18/jsf-2-0-enviando-e-mail-com-commons-mail/ 
+  caso precise nesse link que mencionei tem o exemplo exibindo mensagem de envio do email na tela.
+  
+  obs foram feitas algumas poucas modificaoes e atualizações para funcionar com os jar 
+  commons-email-1.5.jar    javax.mail-1.5-6.jar  e mail-1.4.7.jar esses 3 jars podem ser baixados da internet e adicionados diretamente na pasta lib do projeto
+  e esses jars estao disponiveis para download nesta pasta githunb atual, 
+  ou voce adicionar os jar atraves do arquivo pom.xml , para quem usa mavem, podendo usar as seguintes configurações:
+  
+	    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
+		<dependency>
+		    <groupId>org.apache.commons</groupId>
+		    <artifactId>commons-email</artifactId>
+		    <version>1.5</version>		    
+		    <scope>compile</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/javax.mail/mail 
+		 para enviar email-->
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>mail</artifactId>
+		    <version>1.4.7</version>
+		</dependency>  
+		
+ 
+    
+  obs: 
+  *caso apareca no console a mensagem de erro "Sending the email to the following server failed : smtp.gmail.com:587"    
+  ela pode ocorrer por 3 motivos 
+  1 - tem que se certificar que os jars mensionados foram adicionados no projeto e
+  
+  2 - tem que desativar o antivirus ou criar uma excecao para a aplicacao no antivirus para o envio do email funcionar
+  
+  3 - Nas configurações da conta do email do gmail que sera usado para enviar o email, 
+      tem que ir nas configurações da conta de email
+      e ir na guia "segurança" > e Ativar a opcão "Acesso a app menos seguro"  se nao fizer 
+  isso,  o gmail nao permite o envio do email atraves da aplicação
+  
+  
